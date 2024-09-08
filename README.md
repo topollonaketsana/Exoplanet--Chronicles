@@ -1,3 +1,4 @@
 # Exoplanet--Chronicles
 
-<img src="doc/attachments/ExploringExoplanets.png" alt="ExploringExoplanets" width="995" height="700">
+<img src="docs/attachments/ExploringExoplanets.png" alt="Exploring Exoplanets" width="500">
+
