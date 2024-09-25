@@ -11,7 +11,7 @@
 ##  Project Pipeline
 
 
-## Goal
+# Goal
 
 # Objective: 
 * To create an interactive learning tool that educates students about exoplanets using simulations, machine learning, and data visualizations.
