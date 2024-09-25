@@ -17,7 +17,7 @@
 ## Goal
 * To create an interactive learning tool that educates students about exoplanets using simulations, machine learning, and data visualizations.
 * Target Audience: Students ranging from elementary to high school, with engaging, accessible materials for different learning levels.
-###################################################################################
+_________________________________________________________________________________________________________________________________________________________________
 
 ## Section 1:
 ## 1. Data Collection and model creation
