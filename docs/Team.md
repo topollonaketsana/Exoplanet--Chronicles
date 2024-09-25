@@ -1,6 +1,6 @@
-- [[1] Topollo Naketsana](#section-1) 
-- [[2] Siyabulela Sokweleti](#section-2) 
-- [[3] Matshidiso](#section-3) 
+[[1] - Topollo Naketsana](#section-1) 
+[[2] - Siyabulela Sokweleti](#section-2) 
+[[3] - Matshidiso](#section-3) 
 
 ### Objectives:
 - **Topollo**: Set up the base repository on GitHub and create a model-to-predict/detect exoplanets. [1]
