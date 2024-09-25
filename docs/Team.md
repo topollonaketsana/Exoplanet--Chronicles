@@ -29,14 +29,23 @@ ________________________________________________________________________________
 ###
 
 ## Section 2:
-##
+## 1. Simulation Development
+* Task: Build the transit method simulation.
+* Use data to simulate the light curves caused by planets passing in front of stars.
+* Allow users to adjust interact with the app by changing (eg) planet size, orbital period etc to visualize how all these affect detection.
+(Tools: Python, Streamlit, Matplotlib)
 
 
+###
+## Section 3:
+## 1. Interactive Tool Development - Quiz/
+* Task: Add an interactive quiz or game to test student's knowledge of exoplanets.
+* Incorporate visual elements and feedback.
+* Ensure the tool is engaging and easy to use.
+(Tools: Python, Streamlit, HTML) 
 
 
-
-
-
+________________________________________________________________________________________________________________________________________________________
 
 
 
