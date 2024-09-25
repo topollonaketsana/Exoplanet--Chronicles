@@ -1,9 +1,9 @@
 
 
 ### Objectives:
-- **Topollo**: Set up the base repository on GitHub and create a model-to-predict/detect exoplanets.
-- **Siya**: Focus on building the interactive transit method simulation and app-like website for students to visualize these bodies after they have been detected.
-- **Matshidiso**: Work on integrating a quiz or game feature into the app.
+- **Topollo**: Set up the base repository on GitHub and create a model-to-predict/detect exoplanets. [1]
+- **Siya**: Focus on building the interactive transit method simulation and app-like website for students to visualize these bodies after they have been detected. [2]
+- **Matshidiso**: Work on integrating a quiz or game feature into the app. [3]
 
 - **All**: Document any data or methods you’re using in the `docs/` directory so we can keep track of progress.
 
