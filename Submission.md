@@ -1,18 +1,18 @@
-## For submission We need to follow the following outline
+## For submission We need to use the following instructions
 
 
-#### Project Name
+1. Project Name
 
-#### High-Level Project Summary
+2. High-Level Project Summary
 
-#### Link to Project Demo
+3. Link to Project Demo
 
-#### Link to Final Project
+4. Link to Final Project
 
-#### Detailed Project Description
+5. Detailed Project Description
 
-#### NASA & Space Agency Partner Data
+6. NASA & Space Agency Partner Data
 
-### References
+7. References
 
-### Use of Artificial Intelligence
+8. Use of Artificial Intelligence
