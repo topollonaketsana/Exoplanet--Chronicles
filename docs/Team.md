@@ -39,8 +39,8 @@ ________________________________________________________________________________
 ###
 ## Section 3:
 ## 1. Interactive Tool Development - Quiz/
-* Task: Add an interactive quiz or game to test student's knowledge of exoplanets.
-* Incorporate visual elements and feedback.
+* Task: Add an interactive quiz or feedback to test student's knowledge of exoplanets.
+* Maybe make it visual elements and feedback.
 * Ensure the tool is engaging and easy to use.
 (Tools: Python, Streamlit, HTML) 
 
