@@ -4,6 +4,7 @@
 * [[3] - Matshidiso](#section-3) 
 
 ### Objectives:
+- **Vutomi**: Analyse our data, create or improve the model and focus on creating an interactive app for our model
 - **Topollo**: Set up the base repository on GitHub and create a model-to-predict/detect exoplanets. [1]
 - **Siya**: Focus on building the interactive transit method simulation and app-like website for students to visualize these bodies after they have been detected. [2]
 - **Matshidiso**: Work on integrating a quiz or game feature into the app. [3]
