@@ -1,5 +1,5 @@
 * [[1] - Topollo](#section-1)
-* [[2] - Vutomi](#section-1-2)
+* [[2] - Vutomi](#section-1 and #section-2)
 * [[2] - Siyabulela](#section-2) 
 * [[3] - Matshidiso](#section-3) 
 
