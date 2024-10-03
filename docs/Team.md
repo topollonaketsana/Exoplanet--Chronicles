@@ -1,5 +1,6 @@
-* [[1] - Topollo Naketsana](#section-1) 
-* [[2] - Siyabulela Sokweleti](#section-2) 
+* [[1] - Topollo](#section-1)
+* [[2] - Vutomi](#section-1,2)
+* [[2] - Siyabulela](#section-2) 
 * [[3] - Matshidiso](#section-3) 
 
 ### Objectives:
