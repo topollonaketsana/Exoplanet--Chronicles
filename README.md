@@ -6,7 +6,7 @@ This project aims to create engaging, interactive tools to educate students abou
 
 ## NASA resources:
 * [open](https://science.nasa.gov/exoplanets/how-we-find-and-characterize/) to study about how exoplanets are classified.
-* [data](https://exoplanetarchive.ipac.caltech.edu/docs/data.html)
+* [data](https://exoplanetarchive.ipac.caltech.edu/docs/data.html) and [Resources](https://www.spaceappschallenge.org/resources/)
 * [link to discussion room](https://github.com/nasa/spaceapps/discussions)
 
 ## acknowledgement:
