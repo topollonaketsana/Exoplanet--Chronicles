@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    /* Optional: match your starry background */
+}
+
+.container {
+    width: calc(100vw);
+    /* Adjusts to 100% of the viewport width */
+    height: calc(100vh);
+    /* Maintains a full height */
+    overflow: hidden;
+    /* Prevents overflow */
+    position: relative;
+    /* Enables absolute positioning for child elements */
+    border: 2px solid #ffffff;
+    /* Optional: for better visibility */
+}
