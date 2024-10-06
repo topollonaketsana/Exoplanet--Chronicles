@@ -41,6 +41,11 @@ Follow these steps to set up the project:
    ```bash
    python3.11 -m streamlit run exoplanets.py
 
+3. **run** - another app for better visualization
+
+   ```bash
+    python3.11 -m streamlit run ../App.py
+
 
 ## NASA resources:
 * [open](https://science.nasa.gov/exoplanets/how-we-find-and-characterize/) to study about how exoplanets are classified.
