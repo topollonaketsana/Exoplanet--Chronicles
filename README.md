@@ -4,7 +4,7 @@
 
 ## 1. Detecting Exoplanets:
 
-This project aims to create engaging, interactive tools to educate students about exoplanets using simulations, machine learning, and data visualization. We are developing ML algorithm to help students understand how exoplanets are detected, and classified. The Machine Learning model is found on `notebooks/`.
+This project aimed to create engaging, interactive tools to educate students about exoplanets using simulations, machine learning, and data visualization. We developed Machine Learning algorithm find exoplanets from TESS mission data to help students understand how exoplanets are detected, and classified. The Machine Learning model is found on `notebooks/`.
 
 ## 2. Teaching About Exoplanets:
 To enhance the educational experience within our app, we developed interactive quizzes that allow students to test their knowledge of exoplanets. After providing insights and engaging content about various exoplanets, the quizzes serve as a valuable tool for reinforcing what learners have learned. This approach not only makes the learning process more engaging but also helps identify areas where students may need further understanding, ultimately promoting a deeper grasp of the fascinating world of exoplanets.
