@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+
 # Set up the page configuration
 st.set_page_config(page_title="Exoplanet Explorer", layout="wide")
 #Inserting a backgrond image on the page
