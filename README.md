@@ -33,7 +33,7 @@ Follow these steps to set up the project:
 2. **run:**
  
    ```bash
-  python -m streamlit run .\PopularExoplanets.py
+   python -m streamlit run .\PopularExoplanets.py
 
 
 ## NASA resources:
