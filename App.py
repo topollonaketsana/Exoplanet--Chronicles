@@ -7,22 +7,22 @@ import time
 # Load Data
 @st.cache_data
 def load_data():
-    return pd.read_csv('data/kepler.csv')
+    return pd.read_csv('C:/Users/topol/Exoplanet--Chronicles/data/kepler.csv').head(50)
 
 data = load_data()
 
-# Generate options for the dropdown (with 'None' as an option)
+# Generate options for the dropdown
 options = ['None'] + [f"KOI-{i+1}" for i in range(len(data))]
 
-# Title and Dropdown
-st.title("Kepler Exoplanet Visualization with Orbital Motion")
-selected_systems = st.multiselect('Select Kepler Objects', options)
+# Set up layout with selection bar on the left
+st.sidebar.title("Select Kepler Objects")
+selected_systems = st.sidebar.multiselect('Select Kepler Objects', options)
 
 # Fixed stars in the background
 np.random.seed(42)
-stars_x = np.random.uniform(-200, 200, size=500)
-stars_y = np.random.uniform(-200, 200, size=500)
-stars_z = np.random.uniform(-200, 200, size=500)
+stars_x = np.random.uniform(-400, 400, size=1000)  # Increased canvas size
+stars_y = np.random.uniform(-400, 400, size=1000)
+stars_z = np.random.uniform(-400, 400, size=1000)
 
 # Create the 3D plot
 def create_3d_plot(selected_systems, current_angle):
@@ -36,32 +36,33 @@ def create_3d_plot(selected_systems, current_angle):
         name="Stars"
     ))
 
-    # Average star size (fixed)
-    average_star_size = 30  # Fixed size for visibility
-
     for selected_system in selected_systems:
         system_index = int(selected_system.split('-')[1]) - 1
         system_data = data.iloc[system_index]
 
-        # Add the central yellow star
+        # Parent star with large radius (yellow)
+        star_radius = system_data['koi_srad'] * 20  # scale up for visibility
         fig.add_trace(go.Scatter3d(
             x=[0], y=[0], z=[0],
             mode='markers',
-            marker=dict(size=average_star_size, color='yellow'),
-            name=f"Star for KOI-{system_index+1}"
+            marker=dict(size=star_radius, color='yellow'),
+            name=f"Star KOI-{system_index+1}"
         ))
 
-        # Get the orbital period and calculate angular speed
+        # Exoplanet data: orbital speed, size, and position
         orbital_period_days = system_data['koi_period']
         orbital_period_seconds = orbital_period_days * 24 * 3600  # Convert to seconds
         angular_speed = 2 * np.pi / orbital_period_seconds  # radians per second
 
-        # Scale exoplanet size based on the period and assign radius
-        exoplanet_radius = (system_data['koi_depth'] / 100) * 20  # Example scaling based on depth (arbitrary)
-        exoplanet_size = max(exoplanet_radius, 5)  # Ensure minimum visibility
+        exoplanet_radius = (system_data['koi_depth'] / 100) * 15  # Scale size (make it smaller)
+        exoplanet_size = max(exoplanet_radius, 3)  # Minimum size
 
-        # Orbit radius calculation (scaled down for visualization)
-        orbit_radius = (system_data['koi_srad'] * 20)  # Using star radius to determine orbit radius
+        # Ensure exoplanet radius is smaller than star radius
+        if exoplanet_size >= star_radius:
+            exoplanet_size = star_radius / 2  # Ensure exoplanet is smaller
+
+        # Orbit radius based on stellar radius
+        orbit_radius = system_data['koi_srad'] * 50  # Increase the scale
 
         # Calculate planet position based on the current angle
         planet_x = orbit_radius * np.cos(current_angle)
@@ -72,7 +73,7 @@ def create_3d_plot(selected_systems, current_angle):
             x=[planet_x], y=[planet_y], z=[planet_z],
             mode='markers',
             marker=dict(size=exoplanet_size, color='red'),
-            name=f'Exoplanet KOI-{system_index+1}'
+            name=f"Exoplanet KOI-{system_index+1}"
         ))
 
     # Hide axes and background grid
@@ -86,8 +87,8 @@ def create_3d_plot(selected_systems, current_angle):
         scene_bgcolor="black",
         title="Selected Kepler Exoplanet Systems",
         margin=dict(l=0, r=0, b=0, t=40),
-        width=900,
-        height=900
+        width=1000,  # Increased canvas size
+        height=1000
     )
 
     return fig
@@ -99,22 +100,37 @@ current_angle = 0
 plot_placeholder = st.empty()
 
 # Control animation with selected systems
-# Inside the while loop where planets are animated
 if selected_systems:
+    # Set the refresh rate for the animation
+    refresh_rate = st.slider("Animation Speed (seconds)", min_value=0.01, max_value=1.0, value=0.1)
+    
+    # Run the animation loop for a few seconds
+    start_time = time.time()
     while True:
         fig = create_3d_plot(selected_systems, current_angle)
         plot_placeholder.plotly_chart(fig)
 
-        # Update angular speed based on the current selection
-        angular_speed = []
+        # Update angular speed for the animation
+        angular_speeds = []
         for selected_system in selected_systems:
             system_index = int(selected_system.split('-')[1]) - 1
             orbital_period_days = data.iloc[system_index]['koi_period']
-            orbital_period_seconds = orbital_period_days * 24 * 3600  # Convert to seconds
-            angular_speed.append(2 * np.pi / orbital_period_seconds)  # radians per second
+            orbital_period_seconds = orbital_period_days * 24 * 3600
+            angular_speeds.append(2 * np.pi / orbital_period_seconds)
 
-        # Increment angle based on the average angular speed of selected exoplanets
-        current_angle += np.mean(angular_speed) * 0.1  # Average for all selected systems
-        time.sleep(0.1)  # Delay to control speed of motion
+        # Increment angle based on average angular speed
+        current_angle += np.mean(angular_speeds) * 0.1
+        
+        # Control the refresh rate
+        time.sleep(refresh_rate)  # Use the slider value for control
+
+        # Stop the loop after 10 seconds for analysis
+        if time.time() - start_time > 10:
+            break
+
+    # Allow user to interact and analyze the plot before resuming
+    st.write("You can now analyze the plot. Adjust the selections or parameters, and click 'Run' to resume.")
+    
 else:
     st.write("Please select at least one Kepler Object to visualize.")
+    plot_placeholder.empty()  # Clear the plot placeholder if no selection
