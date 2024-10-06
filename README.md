@@ -15,10 +15,10 @@ Make sure you have the following installed on your machine:
 - Git (for cloning the repository)
 
 ## Install the dependencies
+```bash
+pip install -r ../requirements.txt
 
-    ```bash
-    pip install -r requirements.txt
-
+```
 
 ## Installation
 
